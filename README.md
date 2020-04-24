@@ -17,6 +17,10 @@ https://phaser.io/tutorials/making-your-first-phaser-3-game/part1
 https://phaser.io/tutorials/getting-started-phaser3/part5
 
 
+## Trouble Shooting
+
+
+
 ### About webpack config.
 If you config baseUrl in tsconfig.json, Go to defintion would works fine in vscode after `window reload`, but webpack does not recoginize it. 
 
@@ -33,3 +37,7 @@ https://github.com/s-panferov/awesome-typescript-loader/issues/311
 
 ### webpack `__extends not defined`
 set `"noEmitHelpers": false,`
+
+### Physics.add Error
+
+https://github.com/photonstorm/phaser/issues/3754
