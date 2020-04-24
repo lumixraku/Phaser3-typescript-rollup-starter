@@ -1,59 +1,33 @@
-// import 'phaser';
+import 'phaser';
 
-import * as Phaser from 'phaser';
-
-console.log('.................')
-const stageWidth = document.body.clientWidth;
-const stageHeight = document.body.clientHeight;
-
-
-
-
-
-class A {
-    haha: number
-    constructor() {
-        console.log("A", this.haha)
-    }
-}
-
-
-
-class GameScene extends Phaser.Scene {
-
+export default class Demo extends Phaser.Scene {
     constructor() {
         super('demo');
     }
-    preload() {
-        this.load.setBaseURL('http://labs.phaser.io');
 
-        this.load.image('sky', 'assets/skies/space3.png');
-        this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-        this.load.image('red', 'assets/particles/red.png');
+    preload() {
+        this.load.image('logo', 'assets/phaser3-logo.png');
+        this.load.image('libs', 'assets/libs.png');
+        this.load.glsl('bundle', 'assets/plasma-bundle.glsl.js');
+        this.load.glsl('stars', 'assets/starfields.glsl.js');
     }
 
     create() {
-        this.add.image(400, 300, 'sky');
+        this.add.shader('RGB Shift Field', 0, 0, 800, 600).setOrigin(0);
 
-        var particles = this.add.particles('red');
+        this.add.shader('Plasma', 0, 412, 800, 172).setOrigin(0);
 
-        var emitter = particles.createEmitter({
-            speed: 100,
-            scale: { start: 1, end: 0 },
-            blendMode: 'ADD'
-        });
+        this.add.image(400, 300, 'libs');
 
-        var logo = this.physics.add.image(400, 100, 'logo');
+        const logo = this.add.image(400, 70, 'logo');
 
-        logo.setVelocity(100, 200);
-        logo.setBounce(1, 1);
-        logo.setCollideWorldBounds(true);
-
-        emitter.startFollow(logo);
-
+        this.tweens.add({
+            targets: logo,
+            y: 350,
+            duration: 1500,
+            ease: 'Sine.inOut',
+            yoyo: true,
+            repeat: -1
+        })
     }
 }
-
-
-
-export default GameScene;

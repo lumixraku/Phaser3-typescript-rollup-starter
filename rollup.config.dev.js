@@ -5,16 +5,18 @@ import serve from 'rollup-plugin-serve';
 import typescript from 'rollup-plugin-typescript2';
 
 export default {
+
     //  Our games entry point (edit as required)
     input: [
         './src/index.ts'
     ],
+
     //  Where the build file is to be generated.
     //  Most games being built for distribution can use iife as the module type.
     //  You can also use 'umd' if you need to ingest your game into another system.
     //  The 'intro' property can be removed if using Phaser 3.21 or above. Keep it for earlier versions.
     output: {
-        file: './build/game.js',
+        file: './dist/game.js',
         name: 'MyGame',
         format: 'iife',
         sourcemap: true,
@@ -22,6 +24,7 @@ export default {
     },
 
     plugins: [
+
         //  Toggle the booleans here to enable / disable Phaser 3 features:
         replace({
             'typeof CANVAS_RENDERER': JSON.stringify(true),
@@ -31,18 +34,19 @@ export default {
             'typeof PLUGIN_FBINSTANT': JSON.stringify(false),
             'typeof FEATURE_SOUND': JSON.stringify(true)
         }),
+
         //  Parse our .ts source files
         resolve({
-            extensions: [ '.ts', '.tsx'
-            ]
+            extensions: ['.ts', '.tsx']
         }),
+
         //  We need to convert the Phaser 3 CJS modules into a format Rollup can use:
         commonjs({
-            path: [
+            include: [
                 'node_modules/eventemitter3/**',
                 'node_modules/phaser/**'
             ],
-            exclude: [ 
+            exclude: [
                 'node_modules/phaser/src/polyfills/requestAnimationFrame.js'
             ],
             sourceMap: true,
@@ -57,7 +61,7 @@ export default {
             open: true,
             contentBase: 'dist',
             host: 'localhost',
-            port: 10001,
+            port: 20001,
             headers: {
                 'Access-Control-Allow-Origin': '*'
             }

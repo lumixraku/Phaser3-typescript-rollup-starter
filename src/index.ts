@@ -1,6 +1,6 @@
-import * as Phaser from 'phaser';
+import 'phaser';
 
-import GameScene from '@game/Game'
+import GameScene from 'game/game'
 
 
 console.log('.................')
