@@ -7,7 +7,7 @@ import Graphics = Phaser.GameObjects.Graphics;
 
 import Food from '@game/food'
 
-const distanceAngle = 10
+const distanceAngle = 60
 const tableSize = 360 / distanceAngle;
 
 const angle2Rad = (angle: number) => {
@@ -106,16 +106,18 @@ export default class Demo extends Phaser.Scene {
     addCounter = 0
     addFoodIfNeed() {
         for(let i =0; i < this.foodList.length; i++) {
-
+            // i = 0 angle 0
+            // i = 1 angle 60
             // 盘子是空的, 且恰好转到合适的位置. 就添加食物
             if (!this.foodList[i]) {
-                console.log("angle", this.spSpin.angle)
-                if ( (Math.abs(this.spSpin.angle) % distanceAngle) < 1) {
-                    console.log("angle FFFF", this.spSpin.angle)
+                let mathAngle = this.spSpin.angle < 0 ? 360 + this.spSpin.angle : this.spSpin.angle
+
+                if ( Math.abs(mathAngle - i *  distanceAngle)  < 1) {
 
                     let food = this.add.image(0, 0, 'light') as Food
-                    food.name = `Food${this.addCounter++}`
+                    food.name = `Food${i}`
                     this.foodList[i] = food
+                    console.log("angle add", this.spSpin.angle, food.name)
                     // this.foodList.push(food)
                 }
             }
@@ -132,10 +134,12 @@ export default class Demo extends Phaser.Scene {
 
             let point = new Phaser.Geom.Point(0, 0)
 
-            let angle = this.spSpin.angle + distanceAngle * i
+            let angle = this.spSpin.angle + distanceAngle *  (tableSize  - i)
+
 
 
             Phaser.Geom.Circle.CircumferencePoint(this.circle, angle2Rad(angle) , point);
+
             food.x = point.x
             food.y = point.y
         }
@@ -157,9 +161,6 @@ export default class Demo extends Phaser.Scene {
         let maxX = Math.max(...xVals)
         let minY = Math.min(...yVals)
         let maxY = Math.max(...yVals)
-
-
-
 
         this.mouth.setPosition(minX, minY);
         this.mouth.setSize(maxX - minX, maxY - minY)

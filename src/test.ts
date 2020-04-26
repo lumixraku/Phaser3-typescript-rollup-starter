@@ -19,8 +19,8 @@ export default function changeMouth(game: Phaser.Game) {
   }
 
   setInterval(() => {
-    // movingFnX(1)
+    movingFnX(1)
     window.postMessage(points, "*")
 
-  }, 500);
+  }, 100);
 }
