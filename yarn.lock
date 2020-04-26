@@ -1255,7 +1255,7 @@ etag@~1.8.1:
 
 eventemitter3@^3.1.0:
   version "3.1.2"
-  resolved "https://registry.npm.taobao.org/eventemitter3/download/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
+  resolved "https://registry.npm.taobao.org/eventemitter3/download/eventemitter3-3.1.2.tgz?cache=0&sync_timestamp=1560950873670&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feventemitter3%2Fdownload%2Feventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
   integrity sha1-LT1I+cNGaY/Og6hdfWZOmFNd9uc=
 
 eventemitter3@^4.0.0:
@@ -2929,7 +2929,7 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-phaser@^3.3.0:
+phaser@^3.22.0:
   version "3.22.0"
   resolved "https://registry.npm.taobao.org/phaser/download/phaser-3.22.0.tgz#0007e09116e02f93d46f32dabde7a0c864cedf4d"
   integrity sha1-AAfgkRbgL5PUbzLaveegyGTO300=
@@ -3603,7 +3603,7 @@ source-map-url@^0.4.0:
 
 source-map@0.5.0:
   version "0.5.0"
-  resolved "https://registry.npm.taobao.org/source-map/download/source-map-0.5.0.tgz?cache=0&sync_timestamp=1571657176668&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsource-map%2Fdownload%2Fsource-map-0.5.0.tgz#0fe96503ac86a5adb5de63f4e412ae4872cdbe86"
+  resolved "https://registry.npm.taobao.org/source-map/download/source-map-0.5.0.tgz#0fe96503ac86a5adb5de63f4e412ae4872cdbe86"
   integrity sha1-D+llA6yGpa213mP05BKuSHLNvoY=
 
 source-map@^0.5.6:

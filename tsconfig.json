@@ -2,6 +2,10 @@
     "compilerOptions": {
         "noEmitHelpers": false,
         "sourceMap": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/phaser/types"
+        ],
         "baseUrl": "src",
         "paths": {
             "@root/*": [
@@ -24,6 +28,9 @@
             ],
         }
     },
+    "include": [
+        "./src"
+    ],
     "exclude": [
         "node_modules"
     ]

@@ -1,7 +1,10 @@
-import 'phaser';
 
-import GameScene from 'game/game'
+console.log(Phaser.AUTO)
+console.log(Phaser.AUTO)
 
+
+import GameScene from '@game/game'
+import changeMouth from 'test'
 
 console.log('.................')
 const stageWidth = document.body.clientWidth;
@@ -26,4 +29,4 @@ const config: Phaser.Types.Core.GameConfig = {
 };
 console.log("...............")
 const game = new Phaser.Game(config);
-
+changeMouth(game)

@@ -41,17 +41,17 @@ export default {
         }),
 
         //  We need to convert the Phaser 3 CJS modules into a format Rollup can use:
-        commonjs({
-            include: [
-                'node_modules/eventemitter3/**',
-                'node_modules/phaser/**'
-            ],
-            exclude: [
-                'node_modules/phaser/src/polyfills/requestAnimationFrame.js'
-            ],
-            sourceMap: true,
-            ignoreGlobal: true
-        }),
+        // commonjs({
+        //     include: [
+        //         'node_modules/eventemitter3/**',
+        //         'node_modules/phaser/**'
+        //     ],
+        //     exclude: [
+        //         'node_modules/phaser/src/polyfills/requestAnimationFrame.js'
+        //     ],
+        //     sourceMap: true,
+        //     ignoreGlobal: true
+        // }),
 
         //  See https://www.npmjs.com/package/rollup-plugin-typescript2 for config options
         typescript(),
